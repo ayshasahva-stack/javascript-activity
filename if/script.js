@@ -41,6 +41,8 @@ else {
 
 }
 
+// LEVEL 2: INTERMEDIATE.
+
 // Exercise 4: Temperature Alert
 
 let temp = 25;
@@ -93,6 +95,8 @@ else if (light === "green") {
 
 }
 
+// LEVEL 3: ADVANCED
+
 // Exercise 7: Shopping Discount
 
 let amount = 600;
@@ -103,30 +107,138 @@ let discount = 0;
 // Main discount
 if (amount >= 1000) {
     discount = 20;
-} 
-else if (amount >= 500 && amount< 1000) {
+}
+else if (amount >= 500 && amount < 1000) {
     discount = 10;
-} 
-else if (amount >= 100 && amount< 500) {
+}
+else if (amount >= 100 && amount < 500) {
     discount = 5;
 } else {
     discount = 0;
 }
 
-// Extra membership discount
+//check membership
 if (member) {
     discount += 5;
 }
 
-// Final price calculation
+// Final calculation
 let finalPrice = amount - (amount * discount / 100);
 
 console.log("Final price =", finalPrice);
 
 // Exercise 8: Number Classifier
-// Write a program that classifies a number:
-// • Positive, Negative, or Zero
-// • Even or Odd (if not zero)
-// • Single digit or Multi-digit (if not zero)
-// Example Input: number = -15
-// Expected Output: "Negative, Odd, Multi-digit"
+
+let number = -15
+let result = "";
+// Positive, Negative, or Zero
+if (number > 0) {
+    result += "Positive,"
+
+} else if (number < 0) {
+    result += "Negative,"
+
+} else {
+    result += "zero,"
+
+}
+
+// Even or Odd (if not zero)
+if (number % 2 === 0) {
+    result += "Even,"
+
+} else {
+
+    result += "Odd,"
+
+}
+
+// Single digit or Multi-digit 
+let absNum = Math.abs(number);
+if (absNum < 10) {
+    result += "Single digit"
+} else {
+    result += " Multi-digit"
+}
+console.log(result);
+
+// Exercise 9: Leap Year Checker
+
+let year = 2024;
+if (year % 400 === 0) {
+    console.log(year, " is a leap year");
+
+} else if (year % 100 === 0) {
+    console.log(year, "NOT a leap year");
+
+} else if (year % 4 === 0) {
+    console.log(year, " is a leap year");
+
+} else {
+    console.log(year, " NOT a leap year");
+
+}
+
+
+// CHALLENGE PROBLEMS
+
+// Challenge 1: Calculator with Validation
+
+let num1 = 10;
+let num2 = 0;
+let operator = "/"
+let results;
+
+if (operator === "+") {
+    results = num1 + num2
+}
+else if (operator === "-") {
+    results = num1 - num2
+}
+else if (operator === "*") {
+    results = num1 * num2
+} else if (operator === "/") {
+    if (num2 === 0) {
+        console.log("Cannot divide by zero");
+
+    } else {
+        results = num1 / num2
+    }
+} else {
+    console.log("Invalid operator");
+
+}
+
+// Challenge 2: Library Fine Calculator
+// Write a program that calculates library book fine:
+// • Books returned on time: No fine
+// • 1-7 days late: $0.50 per day
+// • 8-14 days late: $1.00 per day (+ previous fine)
+// • 15+ days late: $2.00 per day (+ previous fine) + 50% penalty
+// Example Input: daysLate = 10
+// Expected Output: Fine = $10.50
+
+// Challenge 3: Student Status Checker
+
+let attendance = 92;
+let grade = 85;
+
+if (attendance >= 95 && grade >= 90) {
+    console.log("Excellent");
+
+} else if (attendance >= 90 && grade >= 80) {
+    console.log("Good");
+
+
+}
+else if (attendance >= 75 && grade >= 70) {
+    console.log("Pass");
+
+
+}
+else {
+    console.log("Need Improvement");
+}
+
+
+
