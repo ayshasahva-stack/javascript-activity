@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <h1>keybpard events</h1>
+
+    <input type="text" id="box" placeholder="Press any key">
+    <p id="output"></p>
+
+    <script>
+        // const input = document.getElementById("inputBox");
+        // const msg = document.getElementById("msg");
+
+        // input.addEventListener("keydown", (event) => {
+        //     msg.textContent = "You pressed: " + event.key;
+        // });
+
+
+        const box = document.getElementById("box");
+        const output = document.getElementById("output");
+        box.addEventListener("keydown", () => {
+            output.textContent = "Key is pressed...";
+        });
+        box.addEventListener("keyup", () => {
+            output.textContent = "Key released!";
+        });
+        box.addEventListener("input", (e) => {
+            output.textContent = "You typed: " + e.target.value;
+        });
+
+    </script>
 </body>
+
 </html>
